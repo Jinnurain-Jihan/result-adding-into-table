@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>Document</title>
+</head>
+<body>
+<div class="container">
+      <div class="name">
+            <p>Name:</p>
+            <input type="text" id="name">
+      </div>
+      <div class="age">
+            <p>Age:</p>
+            <input type="text" id="age">
+      </div>
+      <div class="bangla">
+            <p>Bangla:</p>
+            <input type="text" id="bangla">
+      </div>
+      <div class="english">
+          <p>English:</p>
+            <input type="text" id="english">
+      </div>
+      <div class="math">
+            <p>Math:</p>
+            <input type="text" id="math">
+      </div>
+      <div class="physics">
+            <p>Physics:</p>
+            <input type="text" id="physics">
+      </div>
+      <div class="chemistry">
+           <p>Chemistry:</p>
+            <input type="text" id="chemistry">
+      </div>
+      <div class="btn">
+            <button onclick=" return result()">Input Entry</button>
+      </div>
+</div>
+      <table id="display">
+            <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Bangla</th>
+                  <th>English</th>
+                  <th>Math</th>
+                  <th>Physics</th>
+                  <th>Chemistry</th>
+                  <th>Total</th>
+                  <th>Avg</th>
+            </tr>
+      </table>
+<script>
+      var row=1;
+      function result(){
+var name=document.getElementById("name").value;
+var age=parseInt(document.getElementById("age").value);
+var bangla=parseInt(document.getElementById("bangla").value);
+var english=parseInt( document.getElementById("english").value);
+var math=parseInt( document.getElementById("math").value);
+var physics=parseInt( document.getElementById("physics").value);
+var chemistry=parseInt( document.getElementById("chemistry").value);
+ var total= bangla+english+math+physics+chemistry;
+ var avg=Math.floor(total/5);
+if(!name || !age || !bangla || !english || !math){
+      alert("please fill all the boxes");
+      return;
+}
+if(bangla >100 || english>100 || math >100 || physics >100 || chemistry >100){
+      alert("mark couldn't be greater than 100");
+      return;
+}
+var display=document.getElementById("display");
+ var newRow=display.insertRow(row);
+ var cell1=newRow.insertCell(0);
+ var cell2=newRow.insertCell(1);
+ var cell3=newRow.insertCell(2);
+ var cell4=newRow.insertCell(3);
+ var cell5=newRow.insertCell(4);
+ var cell6=newRow.insertCell(5);
+ var cell7=newRow.insertCell(6);
+ var cell8=newRow.insertCell(7);
+ var cell9=newRow.insertCell(8);
+ cell1.innerHTML= name;
+ cell2.innerHTML= age;
+ cell3.innerHTML= bangla;
+ cell4.innerHTML= english;
+ cell5.innerHTML= math;
+ cell6.innerHTML= physics;
+ cell7.innerHTML= chemistry;
+ cell8.innerHTML= total;
+ cell9.innerHTML= avg;
+  row++;
+}
+</script>
+</body>
+</html>
